@@ -7,7 +7,7 @@ export default function AnalyticsContainer({ children }): JSX.Element {
     <>
       <Head>
         <title>123Swap Liquidity Pair (SLP) Analytics | 123Swap</title>
-        <meta name="description" content="123Swap Liquidity Pair (SLP) Analytics by Sushi" />
+        <meta name="description" content="123Swap Liquidity Pair (123-LP) Analytics by 123swap" />
       </Head>
 
       <Container id="analytics" maxWidth="full" className="grid h-full grid-flow-col grid-cols-10 px-4 mx-auto gap-9">

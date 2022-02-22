@@ -3,7 +3,7 @@ import { useLingui } from '@lingui/react'
 import Image from '../../components/Image'
 import React, { useState } from 'react'
 import { useActiveWeb3React } from '../../services/web3'
-import { CurrencyAmount, JSBI, Token, USD, ZERO } from '@sushiswap/core-sdk'
+import { CurrencyAmount, JSBI, Token, USD, ZERO } from '@123swap/core-sdk-v2'
 import { getAddress } from '@ethersproject/address'
 import { PairType } from './enum'
 import { usePendingSushi, useUserInfo } from './hooks'
@@ -41,7 +41,7 @@ const InvestmentDetails = ({ farm }) => {
     chainId,
     getAddress(farm.pair.id),
     farm.pair.type === PairType.KASHI ? Number(farm.pair.asset.decimals) : 18,
-    farm.pair.symbol ?? farm.pair.type === PairType.KASHI ? 'KMP' : 'SLP',
+    farm.pair.symbol ?? farm.pair.type === PairType.KASHI ? 'KMP' : '123-LP',
     farm.pair.name
   )
 
@@ -60,6 +60,8 @@ const InvestmentDetails = ({ farm }) => {
 
   const pendingReward = usePendingReward(farm)
   const pendingSushi = usePendingSushi(farm)
+
+    console.log("Inbvestment",farm, pendingReward, pendingSushi)
 
   const positionFiatValue = CurrencyAmount.fromRawAmount(
     USD[chainId],

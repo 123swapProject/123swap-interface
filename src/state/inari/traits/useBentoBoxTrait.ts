@@ -1,7 +1,7 @@
 import { useActiveWeb3React } from '../../../services/web3'
 import { ApprovalState } from '../../../hooks/useApproveCallback'
 import { useInariContract } from '../../../hooks/useContract'
-import { CurrencyAmount, Token } from '@sushiswap/core-sdk'
+import { CurrencyAmount, Token } from '@123swap/core-sdk-v2'
 import useBentoMasterApproveCallback, { BentoMasterApproveCallback } from '../../../hooks/useBentoMasterApproveCallback'
 import useTrait, { BaseTrait } from './useTrait'
 import { BaseStrategyHook } from '../strategies/useBaseStrategy'

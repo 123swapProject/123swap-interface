@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, JSBI } from '@sushiswap/core-sdk'
+import { Currency, CurrencyAmount, Fraction, JSBI } from '@123swap/core-sdk-v2'
 
 import React from 'react'
 

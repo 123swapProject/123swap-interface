@@ -24,7 +24,7 @@ import {
   USDC,
   USD,
   ZERO,
-} from '@sushiswap/core-sdk'
+} from '@123swap/core-sdk-v2'
 import { getAddress } from '@ethersproject/address'
 import { Chef, PairType } from './enum'
 import { useKashiPair } from '../kashi/context'
@@ -47,7 +47,7 @@ const ManageBar = ({ farm }) => {
     chainId,
     getAddress(farm.pair.id),
     farm.pair.type === PairType.KASHI ? Number(farm.pair.asset.decimals) : 18,
-    farm.pair.type === PairType.KASHI ? 'KMP' : 'SLP'
+    farm.pair.type === PairType.KASHI ? 'KMP' : '123-LP'
   )
 
   const kashiPair = useKashiPair(farm.pair.id)
@@ -98,7 +98,10 @@ const ManageBar = ({ farm }) => {
   const parsedWithdrawValue = tryParseAmount(withdrawValue, liquidityToken)
 
   const APPROVAL_ADDRESSES = {
-    [Chef.MASTERCHEF]: { [ChainId.ETHEREUM]: MASTERCHEF_ADDRESS[ChainId.ETHEREUM] },
+    [Chef.MASTERCHEF]: {
+      [ChainId.ETHEREUM]: MASTERCHEF_ADDRESS[ChainId.ETHEREUM],
+      [ChainId.BSC]: MASTERCHEF_ADDRESS[ChainId.BSC],
+    },
     [Chef.MASTERCHEF_V2]: { [ChainId.ETHEREUM]: MASTERCHEF_V2_ADDRESS[ChainId.ETHEREUM] },
     [Chef.MINICHEF]: {
       [ChainId.MATIC]: MINICHEF_ADDRESS[ChainId.MATIC],

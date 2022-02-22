@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, WNATIVE } from '@sushiswap/core-sdk'
+import { ChainId, Currency, NATIVE, WNATIVE } from '@123swap/core-sdk-v2'
 
 import { tryParseAmount } from '../functions/parse'
 import { useActiveWeb3React } from '../services/web3'

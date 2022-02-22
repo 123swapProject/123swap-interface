@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@sushiswap/core-sdk'
+import { CurrencyAmount, Token } from '@123swap/core-sdk-v2'
 import { serializeBalancesMap } from './hooks'
 
 describe('Wallet Hooks', () => {

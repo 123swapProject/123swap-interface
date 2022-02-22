@@ -17,7 +17,7 @@ import {
   useSushiPrice,
 } from '../services/graph'
 
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@123swap/core-sdk-v2'
 import { getAddress } from '@ethersproject/address'
 import { useActiveWeb3React } from '../services/web3'
 import { useMemo } from 'react'
@@ -86,7 +86,7 @@ export default function useFarmRewards() {
     pool.owner = pool?.owner || pool?.masterChef || pool?.miniChef
     pool.balance = pool?.balance || pool?.slpBalance
 
-    const swapPair = swapPairs?.find((pair) => pair.id === pool.pair)
+    const swapPair = swapPairs?.find((pair) => {return pair.id === pool.pair})
     const swapPair1d = swapPairs1d?.find((pair) => pair.id === pool.pair)
     const kashiPair = kashiPairs?.find((pair) => pair.id === pool.pair)
 
@@ -106,8 +106,8 @@ export default function useFarmRewards() {
       const rewardPerBlock = (pool.allocPoint / pool.owner.totalAllocPoint) * sushiPerBlock
 
       const defaultReward = {
-        token: 'SUSHI',
-        icon: 'https://raw.githubusercontent.com/sushiswap/logos/main/network/ethereum/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2.jpg',
+        token: '123b',
+        icon: 'https://raw.githubusercontent.com/sushiswap/icons/master/token/unknown.png',
         rewardPerBlock,
         rewardPerDay: rewardPerBlock * blocksPerDay,
         rewardPrice: sushiPrice,

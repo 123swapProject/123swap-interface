@@ -13,7 +13,7 @@ import {
   transactionsQuery,
 } from '../queries'
 
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@123swap/core-sdk-v2'
 import { GRAPH_HOST } from '../constants'
 import { pager } from '../functions'
 
@@ -22,7 +22,7 @@ export const EXCHANGE = {
   [ChainId.XDAI]: 'sushiswap/xdai-exchange',
   [ChainId.MATIC]: 'sushiswap/matic-exchange',
   [ChainId.FANTOM]: 'sushiswap/fantom-exchange',
-  [ChainId.BSC]: 'sushiswap/bsc-exchange',
+  [ChainId.BSC]: 'onetwothreeswap/bsc-excange',
   [ChainId.HARMONY]: 'sushiswap/harmony-exchange',
   [ChainId.AVALANCHE]: 'sushiswap/avalanche-exchange',
   [ChainId.CELO]: 'jiro-ono/sushitestsubgraph',

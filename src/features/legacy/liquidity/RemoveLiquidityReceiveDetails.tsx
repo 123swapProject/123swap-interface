@@ -1,4 +1,4 @@
-import { Currency, NATIVE, WNATIVE, currencyEquals } from '@sushiswap/core-sdk'
+import { Currency, NATIVE, WNATIVE, currencyEquals } from '@123swap/core-sdk-v2'
 
 import { AutoColumn } from '../../../components/Column'
 import CurrencyLogo from '../../../components/CurrencyLogo'

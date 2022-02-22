@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@123swap/core-sdk-v2'
 import { createAction } from '@reduxjs/toolkit'
 
 export interface SerializableTransactionReceipt {

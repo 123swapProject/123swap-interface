@@ -1,5 +1,5 @@
 import { AlertTriangle, ArrowDown } from 'react-feather'
-import { Currency, Percent, TradeType, Trade as V2Trade } from '@sushiswap/core-sdk'
+import { Currency, Percent, TradeType, Trade as V2Trade } from '@123swap/core-sdk-v2'
 import React, { useState } from 'react'
 import { isAddress, shortenAddress } from '../../../functions'
 

@@ -1,4 +1,4 @@
-import { Currency, Trade as V2Trade } from '@sushiswap/core-sdk'
+import { Currency, Trade as V2Trade } from '@123swap/core-sdk-v2'
 import { Field, replaceCreateState, selectCurrency, switchCurrencies, typeInput } from './actions'
 import { useAppDispatch, useAppSelector } from '../hooks'
 

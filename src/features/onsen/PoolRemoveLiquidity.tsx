@@ -4,7 +4,7 @@ import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { ChainId, currencyEquals, NATIVE, Percent, WNATIVE, ZERO } from '@sushiswap/core-sdk'
+import { ChainId, currencyEquals, NATIVE, Percent, WNATIVE, ZERO } from '@123swap/core-sdk-v2'
 import React, { useCallback, useMemo, useState } from 'react'
 import { calculateSlippageAmount, calculateGasMargin, classNames } from '../../functions'
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
@@ -479,7 +479,7 @@ const PoolWithdraw = ({ currencyA, currencyB }) => {
         </div>
         {userLiquidity?.equalTo(ZERO) && (
           <Alert
-            message={i18n._(t`Note: If your SLP is staked, you cannot remove your liquidity. You must unstake first.`)}
+            message={i18n._(t`Note: If your 123-LP is staked, you cannot remove your liquidity. You must unstake first.`)}
             className="mb-4"
             type="information"
           />

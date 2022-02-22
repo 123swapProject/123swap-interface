@@ -2,7 +2,7 @@ import useLimitOrderApproveCallback, { BentoApprovalState } from '../../../hooks
 
 import Alert from '../../../components/Alert'
 import { ArrowLeftIcon } from '@heroicons/react/solid'
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@123swap/core-sdk-v2'
 import CompletedOrders from '../../../features/legacy/open-order/CompletedOrders'
 import Container from '../../../components/Container'
 import DoubleGlowShadow from '../../../components/DoubleGlowShadow'

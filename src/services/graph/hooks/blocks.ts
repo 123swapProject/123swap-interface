@@ -2,7 +2,7 @@ import { getAverageBlockTime, getBlock, getMassBlocks } from '../fetchers'
 import { useActiveWeb3React } from '../../../services/web3'
 import useSWR, { SWRConfiguration } from 'swr'
 import { useMemo } from 'react'
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@123swap/core-sdk-v2'
 import stringify from 'fast-json-stable-stringify'
 
 interface useBlockProps {

@@ -1,5 +1,5 @@
 import { useAppSelector } from '../hooks'
-import { Token } from '@sushiswap/core-sdk'
+import { Token } from '@123swap/core-sdk-v2'
 import { tryParseAmount } from '../../functions'
 import useStakeSushiToBentoStrategy from './strategies/useStakeSushiToBentoStrategy'
 import { DerivedInariState, InariState } from './types'

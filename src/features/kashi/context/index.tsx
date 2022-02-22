@@ -7,7 +7,7 @@ import {
   USDC_ADDRESS,
   WNATIVE,
   WNATIVE_ADDRESS,
-} from '@sushiswap/core-sdk'
+} from '@123swap/core-sdk-v2'
 import React, { createContext, useCallback, useContext, useEffect, useReducer } from 'react'
 import { ZERO, e10, maximum, minimum } from '../../../functions/math'
 import {

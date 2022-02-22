@@ -4,7 +4,7 @@ import { Disclosure, Tab, Transition } from '@headlessui/react'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { useActiveWeb3React } from '../../services/web3'
-import { Token, ZERO } from '@sushiswap/core-sdk'
+import { Token, ZERO } from '@123swap/core-sdk-v2'
 import { getAddress } from '@ethersproject/address'
 import { useUserInfo } from './hooks'
 import ManageSwapPair from './ManageSwapPair'
@@ -22,7 +22,7 @@ const FarmListItemDetails = ({ farm }) => {
     chainId,
     getAddress(farm.pair.id),
     farm.pair.type === PairType.KASHI ? Number(farm.pair.asset.decimals) : 18,
-    farm.pair.type === PairType.KASHI ? 'KMP' : 'SLP'
+    farm.pair.type === PairType.KASHI ? 'KMP' : '123-LP'
   )
 
   const stakedAmount = useUserInfo(farm, liquidityToken)

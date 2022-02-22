@@ -9,7 +9,7 @@ import { ConfirmationModalContent } from '../../../modals/TransactionConfirmatio
 import CurrencyLogo from '../../../components/CurrencyLogo'
 import { Field } from '../../../state/limit-order/actions'
 import Modal from '../../../components/Modal'
-import { USDC } from '@sushiswap/core-sdk'
+import { USDC } from '@123swap/core-sdk-v2'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 

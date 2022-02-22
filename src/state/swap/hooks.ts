@@ -9,7 +9,7 @@ import {
   TradeType,
   Trade as V2Trade,
   WNATIVE_ADDRESS,
-} from '@sushiswap/core-sdk'
+} from '@123swap/core-sdk-v2'
 import {
   EstimatedSwapCall,
   SuccessfulCall,

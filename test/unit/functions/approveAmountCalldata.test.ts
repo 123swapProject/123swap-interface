@@ -1,5 +1,5 @@
 import { AddressZero } from '@ethersproject/constants'
-import { ChainId, Currency, CurrencyAmount, Token } from '@sushiswap/core-sdk'
+import { ChainId, Currency, CurrencyAmount, Token } from '@123swap/core-sdk-v2'
 
 import approveAmountCalldata, { toHex } from '../../../src/functions/approveAmountCalldata'
 

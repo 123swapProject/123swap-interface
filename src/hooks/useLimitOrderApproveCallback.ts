@@ -7,7 +7,8 @@ import { useDerivedLimitOrderInfo, useLimitOrderApprovalPending, useLimitOrderSt
 import { getAddress } from '@ethersproject/address'
 import { AddressZero, HashZero } from '@ethersproject/constants'
 import { Field } from '../state/swap/actions'
-import { Token } from '@sushiswap/core-sdk'
+import { Token } from '@123swap/core-sdk-v2'
+import { ChainId as SushiChainId } from '@sushiswap/core-sdk'
 import { useActiveWeb3React } from '../services/web3'
 import { useBentoMasterContractAllowed } from '../state/bentobox/hooks'
 import { useDispatch } from 'react-redux'
@@ -94,7 +95,7 @@ const useLimitOrderApproveCallback = () => {
           approved: true,
           nonce: nonce.toString(),
         },
-        chainId,
+        (chainId as SushiChainId),
         library
       )
 

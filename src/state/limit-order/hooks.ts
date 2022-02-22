@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Field, replaceLimitOrderState, selectCurrency, setRecipient, switchCurrencies, typeInput } from './actions'
 import { useCurrency } from '../../hooks/Tokens'
-import { ChainId, Currency, CurrencyAmount, JSBI, NATIVE, Percent, Price, WNATIVE } from '@sushiswap/core-sdk'
+import {
+    ChainId, Currency, CurrencyAmount, JSBI, WNATIVE_ADDRESS, Percent, Price, WNATIVE, SUSHI_ADDRESS,
+    NATIVE
+} from '@123swap/core-sdk-v2'
 import { useActiveWeb3React } from '../../services/web3'
 import { useCurrencyBalances } from '../wallet/hooks'
 import { isAddress, tryParseAmount } from '../../functions'
@@ -256,7 +259,7 @@ export function queryParametersToSwapState(chainId: ChainId, parsedQs: ParsedQs)
   let inputCurrency = parseCurrencyFromURLParameter(parsedQs.inputCurrency)
   let outputCurrency = parseCurrencyFromURLParameter(parsedQs.outputCurrency)
   if (inputCurrency === '' && outputCurrency === '') {
-    inputCurrency = NATIVE[chainId].address
+    inputCurrency = NATIVE[chainId].symbol
   } else if (inputCurrency === outputCurrency) {
     outputCurrency = ''
   }

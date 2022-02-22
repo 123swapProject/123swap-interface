@@ -1,5 +1,6 @@
 import { ApprovalState, useApproveCallback } from '../../../hooks/useApproveCallback'
-import { BENTOBOX_ADDRESS, ChainId, Currency } from '@sushiswap/core-sdk'
+import { BENTOBOX_ADDRESS, ChainId, Currency } from '@123swap/core-sdk-v2'
+import { ChainId as SushiChainId } from '@sushiswap/core-sdk'
 import { LimitOrder } from '@sushiswap/limit-order-sdk'
 import Button, { ButtonProps } from '../../../components/Button'
 import { Field, setFromBentoBalance } from '../../../state/limit-order/actions'
@@ -85,7 +86,7 @@ const LimitOrderButton: FC<LimitOrderButtonProps> = ({ currency, color, ...rest 
     )
 
     try {
-      await order.signOrderWithProvider(chainId, library)
+      await order.signOrderWithProvider((chainId as SushiChainId), library)
       setOpenConfirmationModal(false)
 
       const resp = await order.send()

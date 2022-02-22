@@ -11,7 +11,7 @@ import {
 import { useMemo } from 'react'
 import useSWR, { SWRConfiguration } from 'swr'
 
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@123swap/core-sdk-v2'
 import { Chef } from '../../../features/onsen/enum'
 import concat from 'lodash/concat'
 import { useActiveWeb3React } from '../../web3'
@@ -80,9 +80,17 @@ export function useFarms({ chainId, swrConfig = undefined }: useFarmsProps) {
   const masterChefV1Farms = useMasterChefV1Farms({ chainId })
   const masterChefV2Farms = useMasterChefV2Farms({ chainId })
   const miniChefFarms = useMiniChefFarms({ chainId })
+  // used with BSC masterchef as subgraph doesnt support BSC trace_filter and can't find pair creation event and address
+  const staticFarms = [{
+          id: 0,
+          pair: "0x7f5471e38336da86f6087744afbff496acc9af8c",
+          owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000000', totalAllocPoint: '1000'},
+          chef: 0,
+      }
+  ]
   return useMemo(
-    () => concat(masterChefV1Farms, masterChefV2Farms, miniChefFarms).filter((pool) => pool && pool.pair),
-    [masterChefV1Farms, masterChefV2Farms, miniChefFarms]
+    () => concat(masterChefV1Farms, masterChefV2Farms, miniChefFarms, staticFarms).filter((pool) => pool && pool.pair),
+    [masterChefV1Farms, masterChefV2Farms, miniChefFarms, staticFarms]
   )
 }
 

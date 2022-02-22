@@ -1,4 +1,4 @@
-import { Percent, Token, JSBI } from '@sushiswap/core-sdk'
+import { Percent, Token, JSBI } from '@123swap/core-sdk-v2'
 import { LAMBDA_URL, LimitOrder, OrderStatus } from '@sushiswap/limit-order-sdk'
 import { useActiveWeb3React } from '../services/web3'
 import { useLimitOrderContract } from './useContract'

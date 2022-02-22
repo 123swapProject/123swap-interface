@@ -17,7 +17,7 @@ import {
   getTransfers,
 } from './fetchers'
 import useSWR from 'swr'
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@123swap/core-sdk-v2'
 
 // CLASS A
 export function useTokenBalances({ fallbackData = undefined, chainId = ChainId.ETHEREUM, address }) {

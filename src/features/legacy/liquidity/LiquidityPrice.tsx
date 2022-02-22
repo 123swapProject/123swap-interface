@@ -1,4 +1,4 @@
-import { Currency, Percent, Price } from '@sushiswap/core-sdk'
+import { Currency, Percent, Price } from '@123swap/core-sdk-v2'
 
 import { Field } from '../../../state/mint/actions'
 import { ONE_BIPS } from '../../../constants'

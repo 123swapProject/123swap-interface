@@ -1,4 +1,4 @@
-import { JSBI, Percent } from '@sushiswap/core-sdk'
+import { JSBI, Percent } from '@123swap/core-sdk-v2'
 
 import { basisPointsToPercent } from './basisPointsToPercent'
 

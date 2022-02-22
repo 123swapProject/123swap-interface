@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, SUSHI_ADDRESS } from '@sushiswap/core-sdk'
+import { ChainId, Currency, NATIVE, SUSHI_ADDRESS } from '@123swap/core-sdk-v2'
 import { Feature, featureEnabled } from '../../functions/feature'
 import React from 'react'
 

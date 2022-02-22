@@ -110,6 +110,22 @@
     ethers "~4.0.4"
     lodash "^4.17.11"
 
+"@123swap/core-sdk-v2@1.0.0-canary.66":
+  version "1.0.0-canary.66"
+  resolved "https://registry.yarnpkg.com/@123swap/core-sdk-v2/-/core-sdk-v2-1.0.0-canary.66.tgz#4a7b2f04ee16d700fbfdd08bd6a493dc9cedcb47"
+  integrity sha512-akdNUaKjnRhDXErhu1WAKtMd0Nsyx5kexhHhrhEh0QTIVFHKrSSiL618WMNq3yKuDVpJko4GcvvWpopsec77wg==
+  dependencies:
+    "@ethersproject/address" "^5.4.0"
+    "@ethersproject/bignumber" "^5.4.0"
+    "@ethersproject/providers" "^5.4.0"
+    "@ethersproject/solidity" "^5.4.0"
+    big.js "^6.1.1"
+    decimal.js-light "^2.5.0"
+    jsbi "^4.1.0"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.0"
+    toformat "^2.0.0"
+
 "@apideck/better-ajv-errors@^0.2.7":
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/@apideck/better-ajv-errors/-/better-ajv-errors-0.2.7.tgz#cc71652ecb111708c01bdc10206ca85886c118ea"

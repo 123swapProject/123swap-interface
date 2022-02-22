@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { getAddress } from '@ethersproject/address'
 import { AddressZero } from '@ethersproject/constants'
-import { WNATIVE_ADDRESS } from '@sushiswap/core-sdk'
+import { WNATIVE_ADDRESS } from '@123swap/core-sdk-v2'
 import { useActiveWeb3React } from '../services/web3'
 import { useBentoBoxContract } from './useContract'
 import { useCallback } from 'react'

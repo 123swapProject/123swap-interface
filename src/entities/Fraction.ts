@@ -2,7 +2,7 @@ import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { One, Zero } from '@ethersproject/constants'
 import { formatBalance, parseBalance } from '../functions'
 
-import { Fraction as SDKFraction } from '@sushiswap/core-sdk'
+import { Fraction as SDKFraction } from '@123swap/core-sdk-v2'
 import { isEmptyValue } from '../functions/validate'
 
 class Fraction {

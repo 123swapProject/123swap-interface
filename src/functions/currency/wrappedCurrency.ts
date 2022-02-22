@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, WNATIVE } from '@sushiswap/core-sdk'
+import { ChainId, Currency, NATIVE, WNATIVE } from '@123swap/core-sdk-v2'
 
 export function unwrappedToken(currency: Currency): Currency {
   if (currency.isNative) return currency

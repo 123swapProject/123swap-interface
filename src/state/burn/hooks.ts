@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, Pair, Percent, Token, ZERO } from '@sushiswap/core-sdk'
+import { Currency, CurrencyAmount, JSBI, Pair, Percent, Token, ZERO } from '@123swap/core-sdk-v2'
 import { Field, typeInput } from './actions'
 import { useAppDispatch, useAppSelector } from '../hooks'
 
@@ -140,7 +140,7 @@ export function useDerivedBurnInfo(
   }
 
   if (parsedAmounts[Field.CURRENCY_A]?.equalTo(ZERO) && parsedAmounts[Field.CURRENCY_B]?.equalTo(ZERO)) {
-    error = error ?? i18n._(t`Insufficient SLP balance`)
+    error = error ?? i18n._(t`Insufficient 123-LP balance`)
   }
 
   return { pair, parsedAmounts, error, userLiquidity }

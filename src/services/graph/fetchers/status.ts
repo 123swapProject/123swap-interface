@@ -1,4 +1,4 @@
-import { ChainId } from '@sushiswap/core-sdk'
+import { ChainId } from '@123swap/core-sdk-v2'
 import { GRAPH_HOST } from '../constants'
 import { request } from 'graphql-request'
 

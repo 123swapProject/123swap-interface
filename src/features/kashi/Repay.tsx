@@ -5,7 +5,7 @@ import {
   SUSHISWAP_MULTISWAPPER_ADDRESS,
   SUSHISWAP_MULTI_EXACT_SWAPPER_ADDRESS,
   WNATIVE,
-} from '@sushiswap/core-sdk'
+} from '@123swap/core-sdk-v2'
 import React, { useContext, useMemo, useState } from 'react'
 import { Warning, Warnings } from '../../entities/Warnings'
 import { ZERO, e10, maximum, minimum } from '../../functions/math'

@@ -1,4 +1,4 @@
-import { Currency, TradeType, Trade as V2Trade } from '@sushiswap/core-sdk'
+import { Currency, TradeType, Trade as V2Trade } from '@123swap/core-sdk-v2'
 import React, { useMemo } from 'react'
 
 import FormattedPriceImpact from '../legacy/swap/FormattedPriceImpact'

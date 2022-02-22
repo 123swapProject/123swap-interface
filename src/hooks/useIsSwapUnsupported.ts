@@ -1,4 +1,4 @@
-import { Currency, Token } from '@sushiswap/core-sdk'
+import { Currency, Token } from '@123swap/core-sdk-v2'
 
 import { useMemo } from 'react'
 import { useUnsupportedTokens } from './Tokens'

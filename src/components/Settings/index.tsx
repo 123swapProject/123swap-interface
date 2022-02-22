@@ -1,4 +1,4 @@
-import { ChainId, Percent } from '@sushiswap/core-sdk'
+import { ChainId, Percent } from '@123swap/core-sdk-v2'
 import React, { useRef, useState } from 'react'
 import { useExpertModeManager, useUserSingleHopOnly, useUserTransactionTTL } from '../../state/user/hooks'
 import { useModalOpen, useToggleSettingsMenu } from '../../state/application/hooks'

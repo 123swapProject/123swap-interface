@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@sushiswap/core-sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from '@123swap/core-sdk-v2'
 
 import Button from '../../../components/Button'
 import { Field } from '../../../state/mint/actions'

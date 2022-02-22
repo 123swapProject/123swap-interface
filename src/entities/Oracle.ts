@@ -1,4 +1,4 @@
-import { CHAINLINK_ORACLE_ADDRESS, ChainId, Token } from '@sushiswap/core-sdk'
+import { CHAINLINK_ORACLE_ADDRESS, ChainId, Token } from '@123swap/core-sdk-v2'
 
 import { AddressZero } from '@ethersproject/constants'
 import { CHAINLINK_PRICE_FEED_MAP } from '../config/oracles/chainlink'

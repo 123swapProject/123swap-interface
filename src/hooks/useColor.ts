@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@sushiswap/core-sdk'
+import { ChainId, Token } from '@123swap/core-sdk-v2'
 import { useLayoutEffect, useState } from 'react'
 
 import Vibrant from 'node-vibrant'

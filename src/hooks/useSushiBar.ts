@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@sushiswap/core-sdk'
+import { Currency, CurrencyAmount, Token } from '@123swap/core-sdk-v2'
 
 import { useCallback } from 'react'
 import { useSushiBarContract } from './useContract'
