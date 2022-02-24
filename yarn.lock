@@ -110,10 +110,10 @@
     ethers "~4.0.4"
     lodash "^4.17.11"
 
-"@123swap/core-sdk-v2@1.0.0-canary.66":
-  version "1.0.0-canary.66"
-  resolved "https://registry.yarnpkg.com/@123swap/core-sdk-v2/-/core-sdk-v2-1.0.0-canary.66.tgz#4a7b2f04ee16d700fbfdd08bd6a493dc9cedcb47"
-  integrity sha512-akdNUaKjnRhDXErhu1WAKtMd0Nsyx5kexhHhrhEh0QTIVFHKrSSiL618WMNq3yKuDVpJko4GcvvWpopsec77wg==
+"@123swap/core-sdk-v2@1.0.0-canary.71":
+  version "1.0.0-canary.71"
+  resolved "https://registry.yarnpkg.com/@123swap/core-sdk-v2/-/core-sdk-v2-1.0.0-canary.71.tgz#359ff793cda6d219a0bdb465986e3187ee9925a1"
+  integrity sha512-yrdHTiQGTUNV4wuJnp9yudnpPuQ9TQQ0B0txGfLvOphAh22/5PMfhdzIn2O3gMuJ2g71lxjnY+Ih0I6EPAvf7A==
   dependencies:
     "@ethersproject/address" "^5.4.0"
     "@ethersproject/bignumber" "^5.4.0"

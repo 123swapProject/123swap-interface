@@ -18,18 +18,18 @@ import { GRAPH_HOST } from '../constants'
 import { pager } from '../functions'
 
 export const EXCHANGE = {
-  [ChainId.ETHEREUM]: 'sushiswap/exchange',
-  [ChainId.XDAI]: 'sushiswap/xdai-exchange',
-  [ChainId.MATIC]: 'sushiswap/matic-exchange',
-  [ChainId.FANTOM]: 'sushiswap/fantom-exchange',
+  [ChainId.ETHEREUM]: 'onetwothreeswap/exchange',
+  [ChainId.XDAI]: 'onetwothreeswap/xdai-exchange',
+  [ChainId.MATIC]: 'onetwothreeswap/matic-exchange',
+  [ChainId.FANTOM]: 'onetwothreeswap/fantom-exchange',
   [ChainId.BSC]: 'onetwothreeswap/bsc-excange',
-  [ChainId.HARMONY]: 'sushiswap/harmony-exchange',
-  [ChainId.AVALANCHE]: 'sushiswap/avalanche-exchange',
-  [ChainId.CELO]: 'jiro-ono/sushitestsubgraph',
-  [ChainId.ARBITRUM]: 'sushiswap/arbitrum-exchange',
-  [ChainId.MOONRIVER]: 'sushiswap/moonriver-exchange',
-  [ChainId.OKEX]: 'okex-exchange/oec',
-  [ChainId.HECO]: 'heco-exchange/heco',
+  [ChainId.HARMONY]: 'onetwothreeswap/harmony-exchange',
+  [ChainId.AVALANCHE]: 'onetwothreeswap/avalanche-exchange',
+  [ChainId.CELO]: 'onetwothreeswap/sushitestsubgraph',
+  [ChainId.ARBITRUM]: 'onetwothreeswap/arbitrum-exchange',
+  [ChainId.MOONRIVER]: 'onetwothreeswap/moonriver-exchange',
+  [ChainId.OKEX]: 'onetwothreeswap/oec',
+  [ChainId.HECO]: 'onetwothreeswap/heco',
 }
 
 export const exchange = async (chainId = ChainId.ETHEREUM, query, variables = {}) =>

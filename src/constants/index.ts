@@ -73,13 +73,13 @@ export const BLOCKED_ADDRESSES: string[] = [
 ]
 
 export const ANALYTICS_URL: { [chainId in ChainId]?: string } = {
-  [ChainId.ETHEREUM]: 'https://analytics.sushi.com',
-  [ChainId.MATIC]: 'https://analytics-polygon.sushi.com',
-  [ChainId.FANTOM]: 'https://analytics-ftm.sushi.com',
-  [ChainId.BSC]: 'https://analytics-bsc.sushi.com',
-  [ChainId.XDAI]: 'https://analytics-xdai.sushi.com',
-  [ChainId.HARMONY]: 'https://analytics-harmony.sushi.com',
-  [ChainId.ARBITRUM]: 'https://analytics-arbitrum.sushi.com',
+  [ChainId.ETHEREUM]: 'https://analytics.123swap.finance',
+  [ChainId.MATIC]: 'https://analytics-polygon.123swap.finance',
+  [ChainId.FANTOM]: 'https://analytics-ftm.123swap.finance',
+  [ChainId.BSC]: 'https://analytics-bsc.123swap.finance',
+  [ChainId.XDAI]: 'https://analytics-xdai.123swap.finance',
+  [ChainId.HARMONY]: 'https://analytics-harmony.123swap.finance',
+  [ChainId.ARBITRUM]: 'https://analytics-arbitrum.123swap.finance',
 }
 
 export const EIP_1559_ACTIVATION_BLOCK: { [chainId in ChainId]?: number } = {

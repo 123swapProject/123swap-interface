@@ -44,7 +44,7 @@ interface useFarmsProps {
 }
 
 export function useMasterChefV1Farms({ chainId, swrConfig = undefined }: useFarmsProps) {
-  const shouldFetch = chainId && chainId === ChainId.ETHEREUM
+  const shouldFetch = chainId && [ChainId.MATIC, ChainId.XDAI, ChainId.HARMONY, ChainId.ARBITRUM, ChainId.CELO, ChainId.MOONRIVER].includes(chainId)
   const { data } = useSWR(shouldFetch ? ['masterChefV1Farms'] : null, () => getMasterChefV1Farms(undefined), swrConfig)
   return useMemo(() => {
     if (!data) return []
@@ -85,6 +85,12 @@ export function useFarms({ chainId, swrConfig = undefined }: useFarmsProps) {
           id: 0,
           pair: "0x7f5471e38336da86f6087744afbff496acc9af8c",
           owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000000', totalAllocPoint: '1000'},
+          chef: 0,
+      },
+      {
+          id: 0,
+          pair: "0x595519dab18166f23d3a0592d83dcad4ab88cf25",
+          owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000', totalAllocPoint: '1000'},
           chef: 0,
       }
   ]
