@@ -110,10 +110,10 @@
     ethers "~4.0.4"
     lodash "^4.17.11"
 
-"@123swap/core-sdk-v2@1.0.0-canary.71":
-  version "1.0.0-canary.71"
-  resolved "https://registry.yarnpkg.com/@123swap/core-sdk-v2/-/core-sdk-v2-1.0.0-canary.71.tgz#359ff793cda6d219a0bdb465986e3187ee9925a1"
-  integrity sha512-yrdHTiQGTUNV4wuJnp9yudnpPuQ9TQQ0B0txGfLvOphAh22/5PMfhdzIn2O3gMuJ2g71lxjnY+Ih0I6EPAvf7A==
+"@123swap/core-sdk-v2@1.0.0-canary.82":
+  version "1.0.0-canary.82"
+  resolved "https://registry.yarnpkg.com/@123swap/core-sdk-v2/-/core-sdk-v2-1.0.0-canary.82.tgz#3eb4714bb9bff234377ec76532c943f7f3b5750c"
+  integrity sha512-4Ddc6LkrmLBbCefG76S0DT+QXyqAckz8SqmOWbJrpjsBUV4wIc0TID4eRiTcskQoexGLp59GKRZdPj+npuyI6g==
   dependencies:
     "@ethersproject/address" "^5.4.0"
     "@ethersproject/bignumber" "^5.4.0"
@@ -3040,10 +3040,12 @@
   resolved "https://registry.yarnpkg.com/@sushiswap/core/-/core-2.0.0-canary.1.tgz#91c938668282d463e4fce6e0cf4d320ce5f3768f"
   integrity sha512-6YFT4EKgm0XgfwCBsKx5HrDtRI6EvhZHipjBKegdTV0b2zKuXnmdyZ+RwPCr0mCKq2pKB0qIiqCxfbgXYDlLCQ==
 
-"@sushiswap/default-token-list@18.10.0":
-  version "18.10.0"
-  resolved "https://registry.yarnpkg.com/@sushiswap/default-token-list/-/default-token-list-18.10.0.tgz#b1785b1004427e5a142aecd6aa7f741a28a1cb93"
-  integrity sha512-C8F9gE6HWhTMbvVLfCVaBLDNqemKXskyuNQQJG5w+DxbBLYaEKB+pZ//qG2qtyejUrB94Dp5TG0+Vgn7t5ekeg==
+"@sushiswap/default-token-list@24.23.0":
+  version "24.23.0"
+  resolved "https://registry.yarnpkg.com/@sushiswap/default-token-list/-/default-token-list-24.23.0.tgz#2e996d3ae8d3f65664157bec3fe34caf1844cb22"
+  integrity sha512-3sIjjCqiZlYe7vRK4HsZYR2LOYIRu9WRo1TbXfC0QwhMzBSUbQyn7YOXwsJK1y9h76Z7NsHFVoAqalxaJvZkUg==
+  dependencies:
+    raise-version "^0.5.0"
 
 "@sushiswap/default-token-list@^11.3.0":
   version "11.5.0"
@@ -12540,6 +12542,11 @@ module-lookup-amd@^7.0.0:
     requirejs "^2.3.5"
     requirejs-config-file "^4.0.0"
 
+moment@^2.29.1:
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
+  integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -14464,6 +14471,17 @@ quote-unquote@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/quote-unquote/-/quote-unquote-1.0.0.tgz#67a9a77148effeaf81a4d428404a710baaac8a0b"
   integrity sha1-Z6mncUjv/q+BpNQoQEpxC6qsigs=
+
+raise-version@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/raise-version/-/raise-version-0.5.0.tgz#1a9d0a5388c51b4df7c5ea1ea142a06ab1d5032b"
+  integrity sha512-irfv1XeWT0kmSslOjLpVrfmqMtkKLHBSJdrLWHi7tSP84aJlU5bm+/riqA6IdwutSSunyXODSJcy3bFkEgP1jw==
+  dependencies:
+    execa "^5.0.0"
+    fs-extra "^9.0.1"
+    moment "^2.29.1"
+    semver "^7.3.4"
+    yargs "^16.2.0"
 
 ramda@^0.27.1:
   version "0.27.1"

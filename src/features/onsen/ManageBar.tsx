@@ -102,16 +102,20 @@ const ManageBar = ({ farm }) => {
       [ChainId.ETHEREUM]: MASTERCHEF_ADDRESS[ChainId.ETHEREUM],
       [ChainId.BSC]: MASTERCHEF_ADDRESS[ChainId.BSC],
       [ChainId.MATIC]: MASTERCHEF_ADDRESS[ChainId.MATIC],
+      [ChainId.HARMONY]: MASTERCHEF_ADDRESS[ChainId.HARMONY],
+      [ChainId.MOONRIVER]: MASTERCHEF_ADDRESS[ChainId.MOONRIVER],
+      [ChainId.ARBITRUM]: MASTERCHEF_ADDRESS[ChainId.ARBITRUM],
+      [ChainId.XDAI]: MASTERCHEF_ADDRESS[ChainId.XDAI],
+      [ChainId.CELO]: MASTERCHEF_ADDRESS[ChainId.CELO],
+      [ChainId.FANTOM]: MASTERCHEF_ADDRESS[ChainId.FANTOM],
+      [ChainId.OKEX]: MASTERCHEF_ADDRESS[ChainId.OKEX],
+      [ChainId.HECO]: MASTERCHEF_ADDRESS[ChainId.HECO],
+      [ChainId.AVALANCHE]: MASTERCHEF_ADDRESS[ChainId.AVALANCHE],
+      [ChainId.PALM]: MASTERCHEF_ADDRESS[ChainId.PALM],
+      [ChainId.TELOS]: MASTERCHEF_ADDRESS[ChainId.TELOS]
     },
     [Chef.MASTERCHEF_V2]: { [ChainId.ETHEREUM]: MASTERCHEF_V2_ADDRESS[ChainId.ETHEREUM] },
-    [Chef.MINICHEF]: {
-      [ChainId.MATIC]: MINICHEF_ADDRESS[ChainId.MATIC],
-      [ChainId.XDAI]: MINICHEF_ADDRESS[ChainId.XDAI],
-      [ChainId.HARMONY]: MINICHEF_ADDRESS[ChainId.HARMONY],
-      [ChainId.ARBITRUM]: MINICHEF_ADDRESS[ChainId.ARBITRUM],
-      [ChainId.CELO]: MINICHEF_ADDRESS[ChainId.CELO],
-      [ChainId.MOONRIVER]: MINICHEF_ADDRESS[ChainId.MOONRIVER],
-    },
+    [Chef.MINICHEF]: {},
   }
 
   const [approvalState, approve] = useApproveCallback(parsedDepositValue, APPROVAL_ADDRESSES[farm.chef][chainId])

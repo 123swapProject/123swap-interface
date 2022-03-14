@@ -57,11 +57,7 @@ export default function useFarmRewards() {
     shouldFetch: !!block1d && !!farmAddresses,
   })
 
-  const kashiPairs = useKashiPairs({
-    chainId,
-    variables: { where: { id_in: farmAddresses.map(toLower) } },
-    shouldFetch: !!farmAddresses,
-  })
+  const kashiPairs = []
 
   const averageBlockTime = useAverageBlockTime({ chainId })
 

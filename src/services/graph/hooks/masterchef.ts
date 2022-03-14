@@ -92,6 +92,42 @@ export function useFarms({ chainId, swrConfig = undefined }: useFarmsProps) {
           pair: "0x595519dab18166f23d3a0592d83dcad4ab88cf25",
           owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000', totalAllocPoint: '1000'},
           chef: 0,
+      },
+      {
+          id: 0,
+          pair: "0xde938d3d727b72964759ee69d7437eb7e87bab15",
+          owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000', totalAllocPoint: '1000'},
+          chef: 0,
+      },
+      {
+          id: 0,
+          pair: "0xcd105cf8f2388a6da2778d42ed9edf0e4a7eada6",
+          owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000', totalAllocPoint: '1000'},
+          chef: 0,
+      },
+      {
+          id: 0,
+          pair: "0x52c4eec7cb81016781c4d3934f6dbbf04a5ce7b9",
+          owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000', totalAllocPoint: '1000'},
+          chef: 0,
+      },
+      {
+          id: 0,
+          pair: "0xc91F4be2da12a0b105DB0A83b6Fd94000B041Bb3",
+          owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000', totalAllocPoint: '1000'},
+          chef: 0,
+      },
+      {
+          id: 0,
+          pair: "0x4093c50CC472Cd8816E53E8A221254acC0962b9b",
+          owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000', totalAllocPoint: '1000'},
+          chef: 0,
+      },
+      {
+          id: 0,
+          pair: "0x4d9bb69acdf53561a61a92f7cc35b67a9f769eae",
+          owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000', totalAllocPoint: '1000'},
+          chef: 0,
       }
   ]
   return useMemo(
