@@ -1,6 +1,6 @@
 import { useActiveWeb3React } from '../../services/web3'
 import { ApprovalState } from '../../hooks/useApproveCallback'
-import { Field, MeowshiState } from '../../pages/tools/meowshi'
+import { Field, MeowshiState } from '../../pages_archived/tools/meowshi'
 import React, { FC, useMemo, useState } from 'react'
 import { SUSHI, XSUSHI } from '../../config/tokens'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../modals/TransactionConfirmationModal'
