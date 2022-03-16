@@ -128,6 +128,12 @@ export function useFarms({ chainId, swrConfig = undefined }: useFarmsProps) {
           pair: "0x4d9bb69acdf53561a61a92f7cc35b67a9f769eae",
           owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000', totalAllocPoint: '1000'},
           chef: 0,
+      },
+      {
+          id: 0,
+          pair: "0xd616b1d5fd22c73bf0a7513f2e27c0e36fee9b5d",
+          owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000', totalAllocPoint: '1000'},
+          chef: 0,
       }
   ]
   return useMemo(
