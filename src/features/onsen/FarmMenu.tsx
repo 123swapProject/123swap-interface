@@ -41,7 +41,6 @@ const Menu = ({ positionsLength }) => {
       </NavLink>
 
       {[ChainId.ETHEREUM, ChainId.ARBITRUM].includes(chainId) && (
-        <
           <NavLink
             exact
             href={`/farm?filter=sushi`}
@@ -51,7 +50,6 @@ const Menu = ({ positionsLength }) => {
               123Swap Farms
             </a>
           </NavLink>
-        </>
       )}
 
       {(chainId === ChainId.ETHEREUM || chainId === ChainId.MATIC) && (
