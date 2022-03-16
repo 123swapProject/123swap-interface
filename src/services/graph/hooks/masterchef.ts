@@ -113,13 +113,13 @@ export function useFarms({ chainId, swrConfig = undefined }: useFarmsProps) {
       },
       {
           id: 0,
-          pair: "0xc91F4be2da12a0b105DB0A83b6Fd94000B041Bb3",
+          pair: "0xc91f4be2da12a0b105db0a83b6fd94000b041bb3",
           owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000', totalAllocPoint: '1000'},
           chef: 0,
       },
       {
           id: 0,
-          pair: "0x4093c50CC472Cd8816E53E8A221254acC0962b9b",
+          pair: "0x4093c50cc472cd8816e53e8a221254acc0962b9b",
           owner: {id: '0xe7f2dd6b7bf80f703adcf30155c16fc308a455ef', sushiPerBlock: '1000000000000000000', totalAllocPoint: '1000'},
           chef: 0,
       },

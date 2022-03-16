@@ -25,7 +25,7 @@ export const EXCHANGE = {
   [ChainId.BSC]: 'onetwothreeswap/bsc-excange',
   [ChainId.HARMONY]: 'onetwothreeswap/harmony-exchange',
   [ChainId.AVALANCHE]: 'onetwothreeswap/avalanche-exchange',
-  [ChainId.CELO]: 'onetwothreeswap/sushitestsubgraph',
+  [ChainId.CELO]: 'onetwothreeswap/celo-exchange',
   [ChainId.ARBITRUM]: 'onetwothreeswap/arbitrum-exchange',
   [ChainId.MOONRIVER]: 'onetwothreeswap/moonriver-exchange',
   [ChainId.OKEX]: 'onetwothreeswap/oec',
