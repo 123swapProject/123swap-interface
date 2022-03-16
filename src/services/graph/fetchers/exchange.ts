@@ -18,7 +18,7 @@ import { GRAPH_HOST } from '../constants'
 import { pager } from '../functions'
 
 export const EXCHANGE = {
-  [ChainId.ETHEREUM]: 'onetwothreeswap/exchange',
+  [ChainId.ETHEREUM]: 'onetwothreeswap/eth-exchange',
   [ChainId.XDAI]: 'onetwothreeswap/xdai-exchange',
   [ChainId.MATIC]: 'onetwothreeswap/matic-exchange',
   [ChainId.FANTOM]: 'onetwothreeswap/fantom-exchange',
