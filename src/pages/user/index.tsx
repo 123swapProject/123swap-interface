@@ -63,14 +63,14 @@ export default function Me() {
   return (
     <Container id="user-page" className="py-4 space-y-3 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>My SUSHI | 123Swap</title>
-        <meta key="description" name="description" content="My SUSHI" />
+        <title>My 123b | 123Swap</title>
+        <meta key="description" name="description" content="My 123b" />
       </Head>
       <div className="p-4 mb-3 space-y-3">
         <Back />
 
         <Typography component="h1" variant="h2" className=" text-high-emphesis">
-          {i18n._(t`My SUSHI`)}
+          {i18n._(t`My 123b`)}
         </Typography>
       </div>
 
