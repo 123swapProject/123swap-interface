@@ -27,6 +27,7 @@ import { useLingui } from '@lingui/react'
 import { useRouter } from 'next/router'
 import { useTokenBalancesWithLoadingIndicator } from '../../../state/wallet/hooks'
 import { useV2Pairs } from '../../../hooks/useV2Pairs'
+import {EXCHANGE, Exchanges} from "../../../constants/exchanges";
 
 export default function Pool() {
   const { i18n } = useLingui()
@@ -63,7 +64,7 @@ export default function Pool() {
     [tokenPairsWithLiquidityTokens, v2PairsBalances]
   )
 
-  const v2Pairs = useV2Pairs(liquidityTokensWithBalances.map(({ tokens }) => tokens))
+  const v2Pairs = useV2Pairs(Exchanges[EXCHANGE.INTERNAL], liquidityTokensWithBalances.map(({ tokens }) => tokens))
   const v2IsLoading =
     fetchingV2PairBalances || v2Pairs?.length < liquidityTokensWithBalances.length || v2Pairs?.some((V2Pair) => !V2Pair)
 

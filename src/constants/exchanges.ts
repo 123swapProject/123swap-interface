@@ -1,6 +1,5 @@
 import {
     computePairAddress,
-    Currency,
     CurrencyAmount,
     FACTORY_ADDRESS,
     ROUTER_ADDRESS,
@@ -10,7 +9,6 @@ import {
     TradeType
 } from '@123swap/core-sdk-v2'
 import {
-    Currency as SushiCurrency,
     CurrencyAmount as SushiCurrencyAmount,
     Pair as SushiPair,
     Router as SushiRouter,
@@ -31,7 +29,6 @@ export const Exchanges = {
         pair: Pair,
         router: Router,
         trade: Trade,
-        currency: Currency,
         currencyAmount: CurrencyAmount,
         tradeType: TradeType,
         factoryAddress: FACTORY_ADDRESS,
@@ -42,7 +39,6 @@ export const Exchanges = {
         pair: SushiPair,
         router: SushiRouter,
         trade: SushiTrade,
-        currency: SushiCurrency,
         currencyAmount: SushiCurrencyAmount,
         tradeType: SushiTradeType,
         factoryAddress: SUSHI_FACTORY_ADDRESS,

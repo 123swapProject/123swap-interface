@@ -34,6 +34,7 @@ import { tryParseAmount } from '../../functions/parse'
 import { useActiveWeb3React } from '../../services/web3'
 import { useCurrency } from '../../hooks/Tokens'
 import { useKashiInfo } from './context'
+import {EXCHANGE, Exchanges} from "../../constants/exchanges";
 
 interface RepayProps {
   pair: any
@@ -99,7 +100,7 @@ export default function Repay({ pair }: RepayProps) {
 
   const parsedAmount = tryParseAmount(pair.currentUserBorrowAmount.string, assetToken)
 
-  const trade = useV2TradeExactOut(collateralToken, parsedAmount) || undefined
+  const trade = useV2TradeExactOut(Exchanges[EXCHANGE.SUSHI], collateralToken, parsedAmount) || undefined
 
   const { realizedLPFee, priceImpact } = useMemo(() => {
     if (!trade) return { realizedLPFee: undefined, priceImpact: undefined }

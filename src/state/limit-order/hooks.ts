@@ -19,6 +19,7 @@ import useENS from '../../hooks/useENS'
 import { t } from '@lingui/macro'
 import { i18n } from '@lingui/core'
 import { useExpertModeManager, useUserSingleHopOnly } from '../user/hooks'
+import {EXCHANGE, Exchanges} from "../../constants/exchanges";
 
 export function useLimitOrderActionHandlers(): {
   onCurrencySelection: (field: Field, currency: Currency) => void
@@ -116,11 +117,11 @@ export function useDerivedLimitOrderInfo(): {
           )
       : undefined
 
-  const bestTradeExactIn = useTradeExactIn(isExactIn ? parsedInputAmount : undefined, outputCurrency ?? undefined, {
+  const bestTradeExactIn = useTradeExactIn(Exchanges[EXCHANGE.SUSHI],isExactIn ? parsedInputAmount : undefined, outputCurrency ?? undefined, {
     maxHops: singleHopOnly ? 1 : undefined,
   })
 
-  const bestTradeExactOut = useTradeExactOut(inputCurrency ?? undefined, !isExactIn ? parsedInputAmount : undefined, {
+  const bestTradeExactOut = useTradeExactOut(Exchanges[EXCHANGE.SUSHI],inputCurrency ?? undefined, !isExactIn ? parsedInputAmount : undefined, {
     maxHops: singleHopOnly ? 1 : undefined,
   })
 

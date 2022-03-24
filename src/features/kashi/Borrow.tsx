@@ -25,6 +25,7 @@ import { useActiveWeb3React } from '../../services/web3'
 import { useCurrency } from '../../hooks/Tokens'
 import { useKashiInfo } from './context'
 import { useV2TradeExactIn } from '../../hooks/useV2Trades'
+import {EXCHANGE, Exchanges} from "../../constants/exchanges";
 
 interface BorrowProps {
   pair: any
@@ -66,7 +67,7 @@ export default function Borrow({ pair }: BorrowProps) {
 
   const parsedAmount = tryParseAmount(borrowValue, assetToken)
 
-  const foundTrade = useV2TradeExactIn(parsedAmount, collateralToken)
+  const foundTrade = useV2TradeExactIn(Exchanges[EXCHANGE.SUSHI], parsedAmount, collateralToken)
 
   const { realizedLPFee, priceImpact } = useMemo(() => {
     if (!foundTrade) return { realizedLPFee: undefined, priceImpact: undefined }
