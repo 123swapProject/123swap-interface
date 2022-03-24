@@ -157,9 +157,10 @@ export function useFactoryContract(): Contract | null {
   return useContract(chainId && FACTORY_ADDRESS[chainId], FACTORY_ABI, false)
 }
 
-export function useRouterContract(): Contract | null {
+export function useRouterContract(addresses? : any): Contract | null {
   const { chainId } = useActiveWeb3React()
-  return useContract(ROUTER_ADDRESS[chainId], ROUTER_ABI, true)
+  const routerAddress = (addresses) ? addresses[chainId] : ROUTER_ADDRESS[chainId]
+  return useContract(routerAddress, ROUTER_ABI, true)
 }
 
 export function useSushiBarContract(withSignerIfPossible?: boolean): Contract | null {

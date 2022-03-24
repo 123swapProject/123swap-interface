@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Trade, TradeType } from '@123swap/core-sdk-v2'
+import {Currency, CurrencyAmount, Pair, Trade, TradeType} from '@123swap/core-sdk-v2'
 import { PairState, useV2Pairs } from './useV2Pairs'
 
 import { BETTER_TRADE_LESS_HOPS_THRESHOLD } from '../constants'
@@ -6,10 +6,10 @@ import { isTradeBetter } from '../functions/trade'
 import { useAllCurrencyCombinations } from './useAllCurrencyCombinations'
 import { useMemo } from 'react'
 
-function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
+function useAllCommonPairs(exchange:any, currencyA?: Currency, currencyB?: Currency): Pair[] {
   const allCurrencyCombinations = useAllCurrencyCombinations(currencyA, currencyB)
 
-  const allPairs = useV2Pairs(allCurrencyCombinations)
+  const allPairs = useV2Pairs(exchange, allCurrencyCombinations)
 
   // only pass along valid pairs, non-duplicated pairs
   return useMemo(
@@ -34,17 +34,18 @@ const MAX_HOPS = 3
  * Returns the best trade for the exact amount of tokens in to the given token out
  */
 export function useV2TradeExactIn(
+  exchange: any,
   currencyAmountIn?: CurrencyAmount<Currency>,
   currencyOut?: Currency,
   { maxHops = MAX_HOPS } = {}
 ): Trade<Currency, Currency, TradeType.EXACT_INPUT> | null {
-  const allowedPairs = useAllCommonPairs(currencyAmountIn?.currency, currencyOut)
+  const allowedPairs = useAllCommonPairs(exchange, currencyAmountIn?.currency, currencyOut)
 
   return useMemo(() => {
     if (currencyAmountIn && currencyOut && allowedPairs.length > 0) {
       if (maxHops === 1) {
         return (
-          Trade.bestTradeExactIn(allowedPairs, currencyAmountIn, currencyOut, {
+          exchange.trade.bestTradeExactIn(allowedPairs, currencyAmountIn, currencyOut, {
             maxHops: 1,
             maxNumResults: 1,
           })[0] ?? null
@@ -54,7 +55,7 @@ export function useV2TradeExactIn(
       let bestTradeSoFar: Trade<Currency, Currency, TradeType.EXACT_INPUT> | null = null
       for (let i = 1; i <= maxHops; i++) {
         const currentTrade: Trade<Currency, Currency, TradeType.EXACT_INPUT> | null =
-          Trade.bestTradeExactIn(allowedPairs, currencyAmountIn, currencyOut, {
+          exchange.trade.bestTradeExactIn(allowedPairs, currencyAmountIn, currencyOut, {
             maxHops: i,
             maxNumResults: 1,
           })[0] ?? null
@@ -67,24 +68,25 @@ export function useV2TradeExactIn(
     }
 
     return null
-  }, [allowedPairs, currencyAmountIn, currencyOut, maxHops])
+  }, [allowedPairs, currencyAmountIn, currencyOut, maxHops, exchange])
 }
 
 /**
  * Returns the best trade for the token in to the exact amount of token out
  */
 export function useV2TradeExactOut(
+  exchange: any,
   currencyIn?: Currency,
   currencyAmountOut?: CurrencyAmount<Currency>,
   { maxHops = MAX_HOPS } = {}
 ): Trade<Currency, Currency, TradeType.EXACT_OUTPUT> | null {
-  const allowedPairs = useAllCommonPairs(currencyIn, currencyAmountOut?.currency)
+  const allowedPairs = useAllCommonPairs(exchange, currencyIn, currencyAmountOut?.currency)
 
   return useMemo(() => {
     if (currencyIn && currencyAmountOut && allowedPairs.length > 0) {
       if (maxHops === 1) {
         return (
-          Trade.bestTradeExactOut(allowedPairs, currencyIn, currencyAmountOut, {
+          exchange.trade.bestTradeExactOut(allowedPairs, currencyIn, currencyAmountOut, {
             maxHops: 1,
             maxNumResults: 1,
           })[0] ?? null
@@ -94,7 +96,7 @@ export function useV2TradeExactOut(
       let bestTradeSoFar: Trade<Currency, Currency, TradeType.EXACT_OUTPUT> | null = null
       for (let i = 1; i <= maxHops; i++) {
         const currentTrade =
-          Trade.bestTradeExactOut(allowedPairs, currencyIn, currencyAmountOut, {
+          exchange.trade.bestTradeExactOut(allowedPairs, currencyIn, currencyAmountOut, {
             maxHops: i,
             maxNumResults: 1,
           })[0] ?? null
@@ -105,5 +107,5 @@ export function useV2TradeExactOut(
       return bestTradeSoFar
     }
     return null
-  }, [currencyIn, currencyAmountOut, allowedPairs, maxHops])
+  }, [currencyIn, currencyAmountOut, allowedPairs, maxHops, exchange])
 }

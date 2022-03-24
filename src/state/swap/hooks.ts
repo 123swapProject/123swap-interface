@@ -39,6 +39,7 @@ import useENS from '../../hooks/useENS'
 import { useLingui } from '@lingui/react'
 import useParsedQueryString from '../../hooks/useParsedQueryString'
 import useSwapSlippageTolerance from '../../hooks/useSwapSlippageTollerence'
+import {Exchanges} from "../../constants/exchanges";
 
 export function useSwapState(): AppState['swap'] {
   return useAppSelector((state) => state.swap)
@@ -122,8 +123,8 @@ export function useDerivedSwapInfo(doArcher = false): {
   currencyBalances: { [field in Field]?: CurrencyAmount<Currency> }
   parsedAmount: CurrencyAmount<Currency> | undefined
   inputError?: string
-  v2Trade: V2Trade<Currency, Currency, TradeType> | undefined
-  allowedSlippage: Percent
+  allowedSlippage: Percent,
+  trades: any
 } {
   const { i18n } = useLingui()
 
@@ -155,15 +156,20 @@ export function useDerivedSwapInfo(doArcher = false): {
   const isExactIn: boolean = independentField === Field.INPUT
   const parsedAmount = tryParseAmount(typedValue, (isExactIn ? inputCurrency : outputCurrency) ?? undefined)
 
-  const bestTradeExactIn = useTradeExactIn(isExactIn ? parsedAmount : undefined, outputCurrency ?? undefined, {
-    maxHops: singleHopOnly ? 1 : undefined,
-  })
+  let trades = {};
+  let bestTradeExactIn, bestTradeExactOut, exchange, v2Trade;
 
-  const bestTradeExactOut = useTradeExactOut(inputCurrency ?? undefined, !isExactIn ? parsedAmount : undefined, {
-    maxHops: singleHopOnly ? 1 : undefined,
-  })
-
-  const v2Trade = isExactIn ? bestTradeExactIn : bestTradeExactOut
+  for (let key in Exchanges) {
+      exchange = Exchanges[key];
+      bestTradeExactIn = useTradeExactIn(exchange, isExactIn ? parsedAmount : undefined, outputCurrency ?? undefined, {
+          maxHops: singleHopOnly ? 1 : undefined,
+      });
+      bestTradeExactOut = useTradeExactOut(exchange, inputCurrency ?? undefined, !isExactIn ? parsedAmount : undefined, {
+          maxHops: singleHopOnly ? 1 : undefined,
+      });
+      v2Trade = isExactIn ? bestTradeExactIn : bestTradeExactOut;
+      trades[key] = v2Trade;
+  }
 
   const currencyBalances = {
     [Field.INPUT]: relevantTokenBalances[0],
@@ -204,6 +210,8 @@ export function useDerivedSwapInfo(doArcher = false): {
   const allowedSlippage = useSwapSlippageTolerance(v2Trade)
 
   // compare input balance to max input based on version
+
+  // TODO this should calculate sperately for all exchanges and return its result
   const [balanceIn, amountIn] = [currencyBalances[Field.INPUT], v2Trade?.maximumAmountIn(allowedSlippage)]
 
   if (balanceIn && amountIn && balanceIn.lessThan(amountIn)) {
@@ -215,8 +223,8 @@ export function useDerivedSwapInfo(doArcher = false): {
     currencyBalances,
     parsedAmount,
     inputError,
-    v2Trade: v2Trade ?? undefined,
     allowedSlippage,
+    trades
   }
 }
 

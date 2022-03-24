@@ -55,7 +55,8 @@ export function useSwapCallArguments(
   trade: V2Trade<Currency, Currency, TradeType> | undefined, // trade to execute, required
   allowedSlippage: Percent, // in bips
   recipientAddressOrName: string | null, // the ENS name or address of the recipient of the trade, or null if swap should be returned to sender
-  signatureData: SignatureData | null | undefined
+  signatureData: SignatureData | null | undefined,
+  exchange: any
 ): SwapCall[] {
   const { account, chainId, library } = useActiveWeb3React()
 
@@ -63,18 +64,18 @@ export function useSwapCallArguments(
   const recipient = recipientAddressOrName === null ? account : recipientAddress
   const deadline = useTransactionDeadline()
 
-  const routerContract = useRouterContract()
+  const routerContract = useRouterContract(exchange?.routerAddress)
 
   const argentWalletContract = useArgentWalletContract()
 
   return useMemo(() => {
     if (!trade || !recipient || !library || !account || !chainId || !deadline) return []
 
-    if (trade instanceof V2Trade) {
+    if (trade instanceof exchange.trade) {
       if (!routerContract) return []
       const swapMethods = []
       swapMethods.push(
-        Router.swapCallParameters(trade, {
+         exchange.router.swapCallParameters(trade, {
           feeOnTransfer: false,
           allowedSlippage,
           recipient,
@@ -169,7 +170,8 @@ export function useSwapCallback(
   trade: V2Trade<Currency, Currency, TradeType> | undefined, // trade to execute, required
   allowedSlippage: Percent, // in bips
   recipientAddressOrName: string | null, // the ENS name or address of the recipient of the trade, or null if swap should be returned to sender
-  signatureData: SignatureData | undefined | null
+  signatureData: SignatureData | undefined | null,
+  exchange: any
 ): {
   state: SwapCallbackState
   callback: null | (() => Promise<string>)
@@ -182,7 +184,7 @@ export function useSwapCallback(
   const eip1559 =
     EIP_1559_ACTIVATION_BLOCK[chainId] == undefined ? false : blockNumber >= EIP_1559_ACTIVATION_BLOCK[chainId]
 
-  const swapCalls = useSwapCallArguments(trade, allowedSlippage, recipientAddressOrName, signatureData)
+  const swapCalls = useSwapCallArguments(trade, allowedSlippage, recipientAddressOrName, signatureData, exchange)
 
   // console.log({ swapCalls, trade })
 

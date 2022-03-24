@@ -59,6 +59,7 @@ import { warningSeverity } from '../../../functions/prices'
 
 import Image from 'next/image'
 import Banner from '../../../components/Banner'
+import {Exchanges} from "../../../constants/exchanges";
 
 export default function Swap() {
   const { i18n } = useLingui()
@@ -107,12 +108,12 @@ export default function Swap() {
   // swap state
   const { independentField, typedValue, recipient } = useSwapState()
   const {
-    v2Trade,
     currencyBalances,
     parsedAmount,
     currencies,
     inputError: swapInputError,
     allowedSlippage,
+    trades
   } = useDerivedSwapInfo()
 
   const {
@@ -122,6 +123,15 @@ export default function Swap() {
   } = useWrapCallback(currencies[Field.INPUT], currencies[Field.OUTPUT], typedValue)
   const showWrap: boolean = wrapType !== WrapType.NOT_APPLICABLE
   const { address: recipientAddress } = useENSAddress(recipient)
+
+  let exchange, v2Trade;
+  for (let key in Exchanges) {
+      if (trades[key]){
+        v2Trade = trades[key]
+        exchange = Exchanges[key]
+        break;
+      }
+  }
 
   const trade = showWrap ? undefined : v2Trade
 
@@ -243,7 +253,8 @@ export default function Swap() {
     trade,
     allowedSlippage,
     recipient,
-    signatureData
+    signatureData,
+    exchange
   )
 
   const [singleHopOnly] = useUserSingleHopOnly()

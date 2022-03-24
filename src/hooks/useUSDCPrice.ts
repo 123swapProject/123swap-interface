@@ -3,6 +3,7 @@ import { ChainId, Currency, CurrencyAmount, Price, Token, USD } from '@123swap/c
 import { useActiveWeb3React } from '../services/web3'
 import { useMemo } from 'react'
 import { useV2TradeExactOut } from './useV2Trades'
+import {EXCHANGE, Exchanges} from "../constants/exchanges";
 
 // import { wrappedCurrency } from "../functions/currency/wrappedCurrency";
 
@@ -34,7 +35,8 @@ export default function useUSDCPrice(currency?: Currency): Price<Currency, Token
   const amountOut = chainId ? STABLECOIN_AMOUNT_OUT[chainId] : undefined
   const stablecoin = amountOut?.currency
 
-  const v2USDCTrade = useV2TradeExactOut(currency, amountOut, {
+    // todo need to get price from specific exchange
+  const v2USDCTrade = useV2TradeExactOut(Exchanges[EXCHANGE.SUSHI], currency, amountOut, {
     maxHops: 3,
   })
 
